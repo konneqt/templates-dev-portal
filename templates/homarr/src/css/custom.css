@@ -1,0 +1,339 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(https://api.fontshare.com/v2/css?f[]=work-sans@2,1&display=swap);
+
+:root {
+  --ifm-color-primary: #6379f2;
+  --ifm-color-primary-dark: #7e91f8;
+  --ifm-color-primary-darker: #a3aef0;
+  --ifm-color-primary-darkest: #a2b0ff;
+  --ifm-color-primary-light: #729dfb;
+  --ifm-color-primary-lighter: #a6b4f1;
+  --ifm-color-primary-lightest: #fdc3c3;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --homarr-secondary-bg: #e8e8e8;
+
+  --aa-primary-color-rgb: #fa5252 !important;
+  --aa-muted-color-rgb: #fa5252 !important;
+  --aa-background-color-rgb: 200,200,200 !important;
+
+  --ifm-font-family-base: 'Work Sans', sans-serif;
+  --ifm-color-content-inverse: var(--ifm-color-emphasis-100);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #566ef781;
+  --ifm-color-primary-dark: #7e91f8;
+  --ifm-color-primary-darker: #a3aef0;
+  --ifm-color-primary-darkest: #899afa;
+  --ifm-color-primary-light: #a2b0fd;
+  --ifm-color-primary-lighter: #b7c1fd;
+  --ifm-color-primary-lightest: #c8cef3;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --homarr-secondary-bg: #181818;
+  --ifm-color-content-inverse: var(--ifm-color-emphasis-100);
+
+
+  --aa-primary-color-rgb: #fa5252 !important;
+  --aa-muted-color-rgb: #fa5252 !important;
+  --aa-background-color-rgb: 24,24,24 !important;
+}
+
+.aa-DetachedOverlay {
+  backdrop-filter: blur(10px) brightness(0.5);
+}
+
+.aa-DetachedContainer {
+  box-shadow: none !important;
+}
+
+.navbar__logo {
+  margin-right: 1rem;
+}
+
+.swiper-slide {
+  width: initial !important;
+  height: auto !important;
+  padding-bottom: 40px;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 0;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--ifm-color-primary) !important;
+}
+
+.footer {
+  background-color: var(--homarr-secondary-bg) !important;
+}
+
+.footer__copyright span.copyright_text {
+  opacity: .6;
+}
+
+.medium-zoom-overlay {
+  background-color: var(--ifm-color-primary-lighter) !important;
+}
+
+.medium-zoom-image {
+  border-radius: 0.5rem;
+}
+
+.menu__list {
+  transition: all 0.s ease-in-out !important;
+}
+
+.medium-zoom-overlay {
+  background-color: transparent !important;
+  backdrop-filter: blur(10px) brightness(0.7);
+}
+
+.navbar__inner .navbar__items a.navbar__item,
+.navbar__inner .navbar__items div.navbar__item.dropdown {
+  white-space: nowrap;
+}
+
+html[data-theme="dark"] div#__docusaurus div[role="banner"] {
+  background-color: #1b1b1d;
+  color: #c1c1c1;
+}
+
+html[data-theme="dark"] div#__docusaurus div[role="banner"] button svg {
+  color: white;
+}
+
+.navbar__inner a.navbar__brand {
+  font-size: 18px;
+}
+
+:is(p, h3, h4, h5, h6):has(+ :is(ul, ol)){
+  margin-bottom: 4px !important;
+}
+
+.table-of-contents__left-border {
+  border-left: none !important;
+}
+
+.thin-scrollbar.theme-doc-toc-desktop {
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 20px;
+}
+
+.table-of-contents__link--active {
+  font-weight: bold !important;
+}
+
+.pagination-nav__link {
+  background-color: var(--ifm-navbar-background-color);
+  border: 4px transparent solid;
+}
+
+.row.theme-doc-footer-tags-row ul li a {
+  border: none;
+  background-color: var(--ifm-navbar-background-color);
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+/* Default theme collides with some docusaurus rules. We overwrite them to fix the styling. */
+.swagger-ui pre {
+  background-color: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] .swagger-ui {
+    filter: invert(88%) hue-rotate(180deg);
+  }
+  html[data-theme="dark"] .swagger-ui .microlight {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+}
+
+/* Container principal */
+.feature-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 128px;
+}
+
+/* Card de cada feature */
+.feature-card {
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(26, 25, 25, 0.199);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 300px;
+  
+}
+
+
+
+/* Header do card */
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Ícone do card */
+.feature-icon {
+  background-color: #f3f4f6;
+  color: rgb(36, 35, 35);
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título */
+.feature-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Conteúdo do card */
+.feature-content {
+  font-size: 14px;
+  color: #555;
+}
+
+.menu__link--active {
+  color: inherit !important;
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  border-right: 4px solid var(--ifm-color-primary) !important;
+  padding-right: 8px !important;
+}
+
+/* Menu list item styles */
+.menu__list-item {
+  white-space: normal !important;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 14px !important;
+  line-height: 1.2;
+  justify-content: start;
+  font-weight: 500;
+}
+
+/* API method and schema link styles */
+.api-method > .menu__link,
+.schema > .menu__link {
+  align-items: center;
+  justify-content: start;
+  display: flex;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--ifm-menu-color);
+  border-radius: 4px;
+}
+
+/* Common styles for method badges */
+.api-method > .menu__link::before,
+.schema > .menu__link::before {
+  width: 40px;
+  height: 20px;
+  font-size: 10px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  margin-right: var(--ifm-spacing-horizontal);
+  text-align: center;
+  flex-shrink: 0;
+  color: white;
+}
+
+/* HTTP Method specific styles */
+.get > .menu__link::before {
+  content: 'get';
+  background-color: var(--ifm-color-primary);
+}
+
+.post > .menu__link::before {
+  content: 'post';
+  background-color: var(--openapi-code-green);
+}
+
+.delete > .menu__link::before {
+  content: 'del';
+  background-color: var(--openapi-code-red);
+}
+
+.put > .menu__link::before {
+  content: 'put';
+  background-color: var(--openapi-code-blue);
+}
+
+.patch > .menu__link::before {
+  content: 'patch';
+  background-color: var(--openapi-code-orange);
+}
+
+.head > .menu__link::before {
+  content: 'head';
+  background-color: var(--ifm-color-secondary-darkest);
+}
+
+.event > .menu__link::before {
+  content: 'event';
+  background-color: var(--ifm-color-secondary-darkest);
+}
+
+.schema > .menu__link::before {
+  content: 'schema';
+  background-color: var(--ifm-color-secondary-darkest);
+}
+
+/* Markdown content styles */
+.markdown p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Method endpoint display styles */
+.http-method {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.http-method.get {
+  background-color: var(--ifm-color-primary);
+}
+.http-method.post {
+  background-color: var(--openapi-code-green);
+}
+.http-method.put {
+  background-color: var(--openapi-code-blue);
+}
+.http-method.delete {
+  background-color: var(--openapi-code-red);
+}
+.http-method.patch {
+  background-color: var(--openapi-code-orange);
+}
