@@ -63,6 +63,7 @@ const config = {
     ],
   ],
   themeConfig: {
+     // Replace with your project's social card
     image: '/img/dyte-docs-card.png',
     colorMode: {
       defaultMode: 'dark',
