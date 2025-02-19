@@ -1,15 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
-import fs from 'fs';
-import path from 'path';
 import { getOpenApiPlugins } from './openApiPlugins';
-import { create_doc_plugin } from './src/utils/createDocPlugin';
 import { webpackPlugin } from './plugins/webpack-plugin.cjs';
 import tailwindPlugin from './plugins/tailwind-plugin.cjs';
-
-const code_themes = {
-  light: prismThemes.github,
-  dark: prismThemes.dracula,
-};
 
 const meta = {
   title: 'Quantum API Dev Portal',
@@ -24,18 +16,7 @@ const meta = {
   },
 };
 
-const docs = [
-  {
-    id: 'docs',
-    path: 'docs',
-    routeBasePath: '/',
-  },
-];
-
 const plugins = [tailwindPlugin, webpackPlugin, ...getOpenApiPlugins()];
-
-const sdksHTML = fs.readFileSync('./src/snippets/sdks.html', 'utf-8');
-const resourcesHTML = fs.readFileSync('./src/snippets/resources.html', 'utf-8');
 
 const config = {
   ...meta,
