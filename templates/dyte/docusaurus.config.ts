@@ -43,7 +43,7 @@ const config = {
         docs: {
           routeBasePath: '/', // Set this value to '/'.
           breadcrumbs: true,
-          sidebarPath: './sidebars-default.ts',
+          sidebarPath: './sidebars.ts',
           docItemComponent: '@theme/ApiItem',
         },
         blog: false,
