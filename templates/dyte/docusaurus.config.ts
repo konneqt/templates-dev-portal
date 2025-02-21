@@ -31,8 +31,6 @@ const config = {
     '@docusaurus/theme-mermaid',
     'docusaurus-theme-openapi-docs',
   ],
-  clientModules: [require.resolve('./src/client/define-ui-kit.js')],
-  scripts: [{ src: 'https://cdn.statuspage.io/se-v2.js', async: true }],
   markdown: {
     mermaid: true,
   },
@@ -75,6 +73,7 @@ const config = {
       },
     },
     navbar: {
+      title: "Quantum API Dev Portal",
       logo: {
         href: '/',
         src: '/logo/just_q_blue.png',

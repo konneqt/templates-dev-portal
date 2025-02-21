@@ -1098,29 +1098,6 @@ details p {
 .hideReferenceSidebarLink {
   display: none;
 }
-
-.DocSearch-Button {
-  @apply lg:!rounded-md;
-}
-
-.DocSearch-Button-Key {
-  background: theme(colors.secondary.800) !important;
-  top: 0 !important;
-  padding: 0 !important;
-  @apply !border !border-solid !border-text-400/30;
-  @apply !shadow-none;
-  @apply flex items-center;
-}
-
-.DocSearch-Modal {
-  /* after introducting ai chat bot */
-  margin-top: 80px !important;
-}
-
-.DocSearch-Button-Placeholder {
-  @apply !text-xs;
-}
-
 article ol {
   list-style-type: decimal !important;
 }
