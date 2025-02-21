@@ -86,10 +86,10 @@ const config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Intro',
+          label: 'Introduction',
         },
         {
-          label: 'Quantum API Dev Portal',
+          label: 'Documentation',
           to: '/quantum-dev-portal/docs/',
         },
         {
