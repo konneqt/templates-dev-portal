@@ -1,12 +1,10 @@
 {
-  "name": "dyte-docs",
-  "version": "1.20.0",
+  "name": "devportal",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "patch-package",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "dev": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -14,12 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier -w src docs",
-    "format:docs": "prettier -w docs",
-    "typecheck": "tsc",
-    "spell-check": "npx cspell docs/**/*.mdx"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.13.5",
@@ -31,15 +24,29 @@
     "@docusaurus/plugin-client-redirects": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/remark-plugin-npm2yarn": "^3.7.0",
+    "@docusaurus/theme-classic": "^3.7.0",
+    "@docusaurus/theme-common": "^3.7.0",
     "@docusaurus/theme-live-codeblock": "^3.7.0",
     "@docusaurus/theme-mermaid": "3.7.0",
+    "@docusaurus/utils": "^3.7.0",
     "@fluentui/react-icons": "^2.0.271",
     "@headlessui/react": "^1.7.14",
+    "@mdx-js/react": "^3.0.0",
     "@radix-ui/react-select": "^2.1.5",
     "@stoplight/elements": "^8.0.2",
+    "atob": "^2.1.2",
+    "axios": "^1.7.9",
+    "chalk-animation": "^2.0.3",
+    "clear": "^0.1.0",
+    "cli-progress": "^3.12.0",
     "clsx": "^2.1.1",
     "docusaurus-plugin-openapi-docs": "^4.3.3",
     "docusaurus-theme-openapi-docs": "^4.3.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "figlet": "^1.8.0",
+    "inquirer": "^8.2.0",
+    "jsonwebtoken": "^9.0.2",
     "nanoid": "^5.0.6",
     "param-case": "^3.0.4",
     "patch-package": "^6.5.1",
@@ -52,7 +59,9 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
+    "@docusaurus/types": "^3.7.0",
     "@styled-icons/boxicons-logos": "^10.47.0",
     "@swc/core": "^1.10.11",
     "@typescript-eslint/eslint-plugin": "^5.56.0",
@@ -87,26 +96,12 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
     ]
   },
   "engines": {
     "node": ">=18.0"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "tabWidth": 2
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
