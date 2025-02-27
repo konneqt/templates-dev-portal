@@ -199,13 +199,13 @@ body {
     Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* Theme colors */
-  --ifm-color-primary: #2160fd;
-  --ifm-color-primary-dark: #1959fc;
-  --ifm-color-primary-darker: #0f51f8;
-  --ifm-color-primary-darkest: #0042e7;
-  --ifm-color-primary-light: #3d72f8;
-  --ifm-color-primary-lighter: #477af8;
-  --ifm-color-primary-lightest: #6791fc;
+  --ifm-color-primary: #6379f2;
+  --ifm-color-primary-dark: #7e91f8;
+  --ifm-color-primary-darker: #a3aef0;
+  --ifm-color-primary-darkest: #a2b0ff;
+  --ifm-color-primary-light: #729dfb;
+  --ifm-color-primary-lighter: #a6b4f1;
+  --ifm-color-primary-lightest: #c3dafd;
 
   --ifm-navbar-shadow: none;
   --ifm-toc-border-color: #dedede;
@@ -222,18 +222,18 @@ body {
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 html[data-theme='dark'] {
-  --ifm-link-color: #1a90ff;
-  --ifm-tabs-color-active-border: #1a90ff;
-  --ifm-tabs-color-active: #1a90ff;
+  --ifm-link-color: #6379f2;
+  --ifm-tabs-color-active-border: #6379f2;
+  --ifm-tabs-color-active: #6379f2;
 
-  --ifm-color-primary: #1a90ff;
+  --ifm-color-primary: #6379f2;
 
   --ifm-footer-background-color: #1c1c1c;
   --ifm-background-surface-color: #161616;
   --ifm-background-color: #161616;
   --ifm-toc-border-color: #2e2e2e;
 
-  --ifm-color-content: #e7e7e7;
+  --ifm-color-content: #eee7e7;
 
   --docusaurus-highlighted-code-line-bg: rgba(105, 105, 105, 0.3);
 }

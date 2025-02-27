@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-
-import HeroSection from '../components/homepage/HeroSection';
-import APIReferenceSection from '../components/homepage/APIReferenceSection';
-import HomeFooter from '../components/homepage/HomeFooter';
 import Head from '@docusaurus/Head';
+import HeroSection from '../components/homepage/hero/HeroSection';
+import Footer from '../components/homepage/footer/HomeFooter';
+import APIReferenceSection from "../components/homepage/apiReference/APIReferenceSection"
 
 export default function Homepage() {
   return (
     <Layout
       title="Quantum API Dev Portal"
       wrapperClassName="homepage flex flex-col"
-      noFooter
     >
       <Head>
         <link rel="prefetch" href="/assets/css/elements.min.css" />
@@ -21,7 +19,6 @@ export default function Homepage() {
 
       <APIReferenceSection />
 
-      <HomeFooter />
     </Layout>
   );
 }
