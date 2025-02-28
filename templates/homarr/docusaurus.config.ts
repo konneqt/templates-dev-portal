@@ -91,7 +91,7 @@ const config: Config = {
       defaultLanguage: 'bash',
     },
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
     metadata: [
@@ -117,19 +117,6 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins: [
-    'docusaurus-plugin-image-zoom',
-    async function tailwindCssPlugin(context, options) {
-      return {
-        name: 'docusaurus-tailwindcss',
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require('@tailwindcss/postcss'));
-
-          postcssOptions.plugins.push(require('autoprefixer'));
-          return postcssOptions;
-        },
-      };
-    },
     ...getOpenApiPlugins()
   ],
 };

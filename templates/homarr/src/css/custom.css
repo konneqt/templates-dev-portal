@@ -26,7 +26,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #566ef781;
+  --ifm-color-primary: #5d72e781;
   --ifm-color-primary-dark: #7e91f8;
   --ifm-color-primary-darker: #a3aef0;
   --ifm-color-primary-darkest: #899afa;
@@ -226,7 +226,6 @@ html[data-theme="dark"] div#__docusaurus div[role="banner"] button svg {
 /* Menu list item styles */
 .menu__list-item {
   white-space: normal !important;
-
   word-break: break-word;
   overflow-wrap: break-word;
   font-size: 14px !important;
@@ -308,6 +307,17 @@ html[data-theme="dark"] div#__docusaurus div[role="banner"] button svg {
 /* Markdown content styles */
 .markdown p {
   font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.markdown h1 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.markdown h2.anchor {
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
