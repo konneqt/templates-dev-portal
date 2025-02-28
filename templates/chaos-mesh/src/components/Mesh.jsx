@@ -16,7 +16,7 @@ const dotColor3 = '#00E1FF' // Ciano para destaque
 
 // Funções auxiliares para cores
 function setNeutralDotColor(theme) {
-  return theme !== 'dark' ? 'rgba(43, 127, 255, 0.2)' : 'rgba(0, 225, 255, 0.3)'
+  return theme !== 'dark' ? 'rgba(43, 127, 255, 0.2)' : 'rgba(0, 119, 255, 0.3)'
 }
 
 function setDotColor(theme) {
@@ -28,7 +28,7 @@ function setDotColor(theme) {
 }
 
 function setLineColor(theme) {
-  return theme !== 'dark' ? 'rgba(43, 127, 255, 0.1)' : 'rgba(0, 225, 255, 0.15)'
+  return theme !== 'dark' ? 'rgba(43, 127, 255, 0.1)' : 'rgba(0, 68, 255, 0.15)'
 }
 
 export default function Mesh() {
@@ -225,11 +225,9 @@ export default function Mesh() {
         })
       })
 
-      // Função de injeção de caos
+      // Função de injeção de caos - MODIFICADA: removida a verificação de tamanho de tela
       function injectChaos() {
-        if (!window.matchMedia('(min-width: 768px)').matches) {
-          return
-        }
+        // Removida a verificação: if (!window.matchMedia('(min-width: 768px)').matches) { return; }
 
         if (!scaling) {
           curve2 = curve2Range[Math.floor(Math.random() * curve2Range.length)]
@@ -327,13 +325,16 @@ export default function Mesh() {
     })
   }, [colorMode])
 
+  // Adicionado: assegura que o SVG mantenha seu tamanho em telas menores
   return (
     <>
       <svg
         ref={svgEl}
-        className="mesh tw-absolute tw-top-[-10%] 2xl:tw-left-[-100px] tw-w-[1024px] lg:tw-w-full tw-h-[125%]"
         style={{
           transform: 'rotate3d(2, -.4, -1, 25deg)',
+          width: '100%', // Garante que ocupe 100% da largura disponível
+          minWidth: '700px', // Evita que fique muito pequeno
+          minHeight: '500px', // Mantém a altura mínima
         }}
         viewBox="0 0 500 250"
         xmlns="http://www.w3.org/2000/svg"
@@ -341,7 +342,6 @@ export default function Mesh() {
         <g ref={pathsGroup} />
         <g ref={dotsGroup} />
       </svg>
-      <div className={`mesh-text tw-absolute tw-px-2 tw-py-1 tw-bg-primary tw-text-white tw-rounded tw-opacity-0`} />
     </>
   )
 }

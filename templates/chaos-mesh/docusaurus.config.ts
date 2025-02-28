@@ -87,7 +87,7 @@ const config = {
           label: 'Introduction',
         },
         {
-          label: 'Quantum Dev Portal',
+          label: 'Documentation',
           to: '/quantum-dev-portal/docs/apis',
         },
         {
@@ -122,8 +122,6 @@ const config = {
   themes:['docusaurus-theme-openapi-docs'],
 
   plugins: [
-    './docusaurus-tailwind-v3',
-    ['@gracefullight/docusaurus-plugin-microsoft-clarity', { projectId: 'lggqck9srz' }],
     ...getOpenApiPlugins()
   ],
 }

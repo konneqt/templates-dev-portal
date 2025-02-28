@@ -5,29 +5,31 @@
  * and scoped locally.
  */
 
-:global(.navbar) {
+ :global(.navbar) {
   box-shadow: none;
 }
 
 .heroTitle {
-  background: #6379f2;
+  justify-content: start;
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: #404042;
 }
 
 /* Tema escuro */
 [data-theme="dark"] .heroTitle {
-  background:#6379f2;
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
+  color: #ffff;
 }
-
 
 @media screen and (max-width: 767px) {
   .whiteboardCol {
     --ifm-col-width: calc(1 / 12 * 100%) !important;
+  }
+  .heroTitle {
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -59,5 +61,226 @@
     background-image: url(/img/home/workflows-dark-min.png);
     border: 1px solid oklch(var(--bc) / 0.6);
     box-shadow: 75px 75px 75px -25px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Estilização geral */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+.meshBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* Evita interferência */
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  color: white;
+  padding: 5rem 2rem;
+}
+
+
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.textContainer {
+  flex: 0.8;
+  padding: 24px;
+  max-width: 600px;
+}
+
+@media (min-width: 1024px) {
+  .flexContainer {
+    flex-direction: row;
+  }
+  .textContainer {
+    padding: 12px;
+  }
+}
+
+/* Título principal */
+@media (min-width: 1280px) {
+  .heroTitle {
+    font-size: 4rem;
+  }
+}
+
+/* Destaque no título */
+.highlight {
+  font-weight: bold;
+  background: linear-gradient(90deg, #6379f2, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Tema escuro */
+[data-theme="dark"] .highlight {
+  background: linear-gradient(90deg, #ffffff, #6379f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+/* Parágrafo de descrição */
+.description {
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  color: rgba(108, 108, 119, 0.849);
+  text-align: left; 
+  max-width: 40%; 
+  padding: 8px; 
+}
+
+@media (max-width: 768px) {
+  .description {
+    text-align: center !important; /* Usando !important para garantir que a centralização seja aplicada */
+    max-width: 90% !important; /* Garantindo que o max-width seja aplicado corretamente */
+    margin-top: 10px; /* Ajuste da margem superior */
+  }
+}
+
+
+[data-theme="dark"] .description {
+  color: rgba(158, 158, 163, 0.849);
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.125rem;
+  }
+}
+
+/* Botões */
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Ajuste para telas mobile */
+@media screen and (max-width: 768px) {
+  .buttonGroup {
+    gap: 8px;  /* Espaçamento menor entre os links */
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    padding: 8px 12px;  /* Padding menor */
+    font-size: 14px;    /* Tamanho da fonte menor */
+  }
+  
+  .icon {
+    width: 16px;   /* Ícone menor */
+    height: 16px;
+  }
+}
+
+/* Para telas ainda menores */
+@media screen and (max-width: 480px) {
+  .buttonGroup {
+    gap: 6px;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.primaryButton {
+  background-color: #6379f2;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  background-color: #5567d4;
+  text-decoration: none;
+  color: white;
+
+
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #393a3f, #4a4b50);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s;
+  color: #fff
+}
+
+.secondaryButton:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: #fff
+
+
+}
+
+/* Ícone */
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+/* Animações de rolagem */
+.scrollToDisplay {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.scrollToDisplayX {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+/* Responsividade da imagem */
+.imageContainer {
+  width: 500px;
+  padding: 24px;
+}
+
+@media (max-width: 1024px) {
+  .imageContainer {
+    display: none;
   }
 }

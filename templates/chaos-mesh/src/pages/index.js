@@ -11,8 +11,8 @@ import React, { useEffect } from 'react'
 
 import IconOctocat from '../../static/img/icons/octocat.svg'
 import Mesh from '../components/Mesh'
-import PickVersion from '../components/PickVersion'
 import styles from './index.module.css'
+import HomepageFeatures from '../components/features'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,27 +24,27 @@ function Home() {
   const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark'
 
   useEffect(() => {
-    document.querySelector('.navbar__inner').classList.add('tw-container', 'tw-mx-auto')
+    document.querySelector('.navbar__inner').classList.add(styles.container)
 
-    gsap.from('.scroll-to-display', {
+    gsap.from(`.${styles.scrollToDisplay}`, {
       duration: 1,
       opacity: 0,
       y: 50,
       stagger: 0.25,
       scrollTrigger: {
-        trigger: '.scroll-to-display',
+        trigger: `.${styles.scrollToDisplay}`,
         toggleActions: 'restart none none none',
       },
     })
 
-    gsap.from('.scroll-to-display-x', {
+    gsap.from(`.${styles.scrollToDisplayX}`, {
       duration: 1,
       opacity: 0,
       x: 0,
       y: 100,
       stagger: 0.25,
       scrollTrigger: {
-        trigger: '.scroll-to-display-x',
+        trigger: `.${styles.scrollToDisplayX}`,
         toggleActions: 'restart none none none',
       },
     })
@@ -55,53 +55,45 @@ function Home() {
       <Head>
         <title>Quantum API Dev Portal</title>
       </Head>
-      <main>
-        <div className="hero tw-relative tw-h-[768px] tw-pt-0 tw-overflow-hidden">
+      <main className={styles.main}>
+        {/* Mesh como background */}
+        <div className={styles.meshBackground}>
           <BrowserOnly>{() => <Mesh />}</BrowserOnly>
-          <div className="tw-container tw-mx-auto tw-z-10">
-            <div className="tw-flex tw-flex-col lg:tw-flex-row lg:tw-justify-between lg:tw-items-center">
-              <div className="tw-flex-[.8] 2xl:tw-flex-[.6] tw-p-6 lg:tw-p-3 tw-max-w-[600px]">
-                <h1
-                  className={clsx(
-                    'tw-inline-block tw-text-5xl xl:tw-text-6xl tw-text-left tw-rounded-2xl tw-backdrop-blur-sm lg:tw-backdrop-blur',
-                  )}
-                >
-                  {/* Due to the below texts are not simple strings, so we can't use <Translate /> here. */}
+        </div>
+
+        <div className={styles.hero}>
+          <div className={styles.container}>
+            <div >
+              <div >
+                <h1 className={clsx(styles.heroTitle)}>
                   {i18n.currentLocale === 'en' && (
                     <>
-                      <span>Document</span>
-                      <br />
+                      <span>Document </span> <br/>
                       <span>Your</span>
-                      <span className={clsx(styles.heroTitle)}> APIs </span>
-                      <br />
+                      <span className={clsx(styles.highlight)}> APIs </span> <br/>
                       <span>Efficiently</span>
                     </>
                   )}
                 </h1>
-                <p className="lg:tw-text-lg tw-font-medium tw-rounded-2xl tw-backdrop-blur-sm lg:tw-backdrop-blur tw-mt-4">
+                <p className={styles.description}>
                   <Translate id="home.desc">{description}</Translate>
                 </p>
-                <div className="tw-flex tw-gap-3">
-                  <Link
-                    to="/docs/production-installation-using-helm"
-                    className="tw-btn tw-bg-[#6379f2] tw-text-[#FFF] hover:-tw-translate-y-[3px] hover:tw-bg-[#6379f2] hover:tw-text-[#FFF]"
-                  >
+                <div className={styles.buttonGroup}>
+                  <Link to="/quantum-dev-portal/docs/apis/" className={styles.primaryButton}>
                     <Translate id="home.getstarted">Documentation →</Translate>
                   </Link>
-                  <Link
-                    to="https://github.com/chaos-mesh/chaos-mesh"
-                    className="tw-btn !tw-btn-neutral tw-gap-2 dark:tw-glass hover:-tw-translate-y-[3px]"
-                  >
-                    <IconOctocat className="tw-w-4 tw-h-4 tw-fill-white" />
+                  <Link to="https://github.com/chaos-mesh/chaos-mesh" className={styles.secondaryButton}>
+                    <IconOctocat className={styles.icon} />
                     GitHub
                   </Link>
                 </div>
               </div>
-
-              <div className="lg:max-xl:tw-w-[500px] tw-p-6 lg:tw-p-3"></div>
+              <div className={styles.imageContainer}></div>
             </div>
           </div>
         </div>
+
+        <HomepageFeatures/>
       </main>
     </Layout>
   )
