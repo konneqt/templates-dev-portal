@@ -70,7 +70,7 @@ const config: Config = {
           label: 'Introduction',
         },
         {
-          label: 'Quantum Dev Portal',
+          label: 'Documentation',
           to: '/quantum-dev-portal/docs/apis',
         },
         {

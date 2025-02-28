@@ -82,7 +82,7 @@ function Home() {
                   <Link to="/quantum-dev-portal/docs/apis/" className={styles.primaryButton}>
                     <Translate id="home.getstarted">Documentation →</Translate>
                   </Link>
-                  <Link to="https://github.com/chaos-mesh/chaos-mesh" className={styles.secondaryButton}>
+                  <Link to="https://github.com/konneqt/quantum-dev-portal" className={styles.secondaryButton}>
                     <IconOctocat className={styles.icon} />
                     GitHub
                   </Link>
