@@ -73,11 +73,11 @@ const config: Config = {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
-          label: "Docs",
+          label: "Introduction",
         },
         {
           to: "/quantum-dev-portal/docs/",
-          label: "Quantum Dev Portal",
+          label: "Documentation",
           position: "left",
         },
         {
