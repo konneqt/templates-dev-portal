@@ -1,0 +1,69 @@
+---
+id: get-vaults
+title: "Get all Vaults"
+description: "Get all Vaults"
+sidebar_label: "Get all Vaults"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVttu4zYQ/RVi0EdZsrPbNtBTjdRJ04sT2N4UheMatDSWuZFEhqS09gr692IoyXcsCrRPljnD4ZnDw0NWIBVqboXMH2MI4QHtCy9Sa8ADxTXP0KI2EM4riNFEWihKhRDuRWpRM7tB5iawSKYpRhRlK24wZjJvIznPkBVG5Amb3j3+wfCdrd1s8EBQrfcC9Q48oEQIYR800QYzDmEFuOWZSinoiuE7e4WpzLq1xzzDVwAP7E5RkrFa5AnU9cIDjUbJ3KChOjf9Pv1EMreYW/rkSqUicgQEnw21Vh2tKyxmbqLSxJMVTRlurRarwuILaiOaSaf0zDbISoetbFP24ERuMUENtdfh+HaVJsjk2pFdtmS7ieZ6VY3cYjx0/a2lzriFEGJusWdFhkCc8PgpT3cQWl3gBW3eKYzqMi5iRwq3FjUB/Xv++hrz3tdFdfND/d3lRngHJk87HBfZCjU1xyMrSmQuj4n80OzVHhupXEHWDFSAeZFBOIdP09FkeTcZDWejn8GD59Fk+jQe/g4ejF5Gk7+exiPwYDYZjqf3owksriAvVPzf6NyjArn6jJFrSFinZiffA2zgWvMd1PX5FsDTb5T1sT/4F/LdH5YKMjSGJ1T5MS95KmJm5RvmzIgk57bQhN5YbgsD4cf+oD4+c6eS31c638Eha0MsRstFSsec9g61lvqaErr1zgv9Mps9s6kLsjsZ45V9/waTI1pu0p71awx2BEjNMmGcGzkuXFWDUaGF3Tmju5N5jpGduWg4X5CLWJ6QC0Jrjovz6g9oGU9TtjfPDO1GkqMmaJ2X2g2EEJRd3KAuO2ctdAohbKxVYRAMFDfmi9Sxn8qIp1B7ZwlueCONDW/7t/2gHAAB7DqY0v41W3baRwUr5Br1fafgX/+cdR5LBDbRA+m0muNG5GvZqY5HTnWYcUGITKGU1PanA+ZIZgcjHzy3w+yRdrC5Zqj5Qz8mDIK2in9SJbiwIZiMpjM2fH5kpAe95hGytdTssErbsH8ki4sgeNA5cggD/3v/R/Bg2+NKmKTQRS/iFhOpnernB10sKCmViWPiFD5XwqfpPs0Pypsg4tEGA0oOXM6yUKnksf9FvIkMY8F9qZMl/VP0bxnJLJO5WdpNka2WuMQPyz0Vbk3flMlycHPbV9veZcRXzbna9qQWCV2o8yOfkgpzrsQF6eKMbgfsIL5e1NB1OUJU+TuepSdMfvD7TobbntKyFDHqcauBMzlTCmlfRNhmtHWpBSWNzbgTayuhi3N1/WayuLWBSrnInWNTp1V75uZQ7s8snRoaqSp6onzSaV3TcPP+cG8cYfgqxRjCNU8NXiy3d97/6/1zFf8b7o6fQSVPC0pyBJdcC4LojMmDDfIYtcPezBpGESp7NOvihqAqe3d6GJEJ8IKY2rO5t4L2g6p3F1S+O6pdVU2Gs5i6hg56a6yLuq7/Aeock/8=
+sidebar_class_name: "get api-method"
+info_path: 1Password-Connect/1-password-connect
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get all Vaults"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/vaults"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get all Vaults
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Filter the Vault collection based on Vault name using SCIM eq filter","in":"query","name":"filter","schema":{"example":"name eq \"Some Vault Name\"","type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"items":{"properties":{"attributeVersion":{"description":"The vault version","type":"integer"},"contentVersion":{"description":"The version of the vault contents","type":"integer"},"createdAt":{"format":"date-time","readOnly":true,"type":"string"},"description":{"type":"string"},"id":{"pattern":"^[\\da-z]{26}$","type":"string"},"items":{"description":"Number of active items in the vault","type":"integer"},"name":{"type":"string"},"type":{"enum":["USER_CREATED","PERSONAL","EVERYONE","TRANSFER"],"type":"string"},"updatedAt":{"format":"date-time","readOnly":true,"type":"string"}},"type":"object","title":"Vault"},"type":"array"}}},"description":"OK"},"401":{"content":{"application/json":{"example":{"message":"Invalid token signature","status":401},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Invalid or missing token"}}}
+>
+  
+</StatusCodes>
+

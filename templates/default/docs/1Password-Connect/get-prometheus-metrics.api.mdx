@@ -1,0 +1,61 @@
+---
+id: get-prometheus-metrics
+title: "Query server for exposed Prometheus metrics"
+description: "See Prometheus documentation for a complete data model."
+sidebar_label: "Query server for exposed Prometheus metrics"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVWtrKzcQ/Sti7tf1vlzHzkKhoaS3KW3xbVxKscMia8drkdXj6uFrY/a/F8nrOI8bCPTTrkZzZkZnzkhHaNAyw7XjSkIF94hkbpRAt0VvSaOYFygdDdtkowyhhCmhO3RIGuooEarBLoUElEYT3e4aqOAzukuYP9AZziwkYNBqJS1aqI5Q5nn4MCUdShd+He5dpjvKZVhZtkVBwx/uacgJFXwiv97+PietqltWN/6UsbbIlGwsuSHWC0HNgagNcVskmnqL5OwXrC01a9oiYarrkEUrO7AObbqSn8ji3/nte8GH0Cv5/f3jV0+l4x3+uIJ8BT0p0+tiMsZRPvkQJC0nAXWVlrNx+XFUBF2n02I2/ThoGlF5mud5UZTXV9OPwIonTFlMZsX1e5jaehH9ivH0anZVvuvHlJeOFD+sJCTgDjr01zrDZQt93yevlekZQ2s3vusOxKDzRmLzXKtiUFmAWjQ7NBaq5RG86aCCrXO6yrJOMdptlXXVLJ/l0D8k4GgbHOGs0ocEQkgVZNyigwQ0dVuoIBNPOrbIvOHucB8kelLzz0pKZG6hHjGqd43UoPlFGUEdVPDbP4uAi/5QDbuXc4fyYuVcbtR5KiiLU4GC8nAE67VWxv1UaGrtN2WalCkBCUgaQxbzwUzupMP2RHYo9kKArbJsiJK+iJLBG77/ur1fkJv5HeHSodlQhnH+L1mGA4fZd9x1L0sYNiGB0IdTxCKdpFNIYD+imtvWGz9i1GGrDMfYgTOroQX7UafayMTL8qnmaYCnAZ/tyoxRtsUsOGfRp/a6U7RJv/FHLrDhNFWmrcNKh1XNlBBK2tptvVjXWOO4fqIi5kztrq2Lcpbr/ejtTqqDPEN9yvA2XFTLI2zOXVYaJdX8Den8Fd2xsOwSnZ3oemsJVKUHKroXTI7Tk3T3I23Ujjdo/hw08JQlCj2SHWaBMxw8hrjhCFpZJ2gU6yChLx7NgZyGJ3Yb91rZ74/ZK708u8f/xyMyTMOzd6AfqDwOU7gEcZnTMMjBdDyuqcW/Tdf3wfw1HAOq5UMCO2o4XQdxLh/6BLZIGzSxZ494gApuGEMdZUo7/zr185vg8+0C+v4/LdCGIw==
+sidebar_class_name: "get api-method"
+info_path: 1Password-Connect/1-password-connect
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Query server for exposed Prometheus metrics"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/metrics"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+See Prometheus documentation for a complete data model.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"text/plain":{"schema":{"example":"# HELP go_gc_duration_seconds A summary of the pause duration of garbage collection cycles.\n# TYPE go_gc_duration_seconds summary\ngo_gc_duration_seconds{quantile=\"0\"} 2.9153e-05\ngo_gc_duration_seconds{quantile=\"0.25\"} 6.2832e-05\ngo_gc_duration_seconds{quantile=\"0.5\"} 9.7187e-05\ngo_gc_duration_seconds{quantile=\"0.75\"} 0.000112967\ngo_gc_duration_seconds{quantile=\"1\"} 0.000215819\ngo_gc_duration_seconds_sum 0.001376862\ngo_gc_duration_seconds_count 14\n","type":"string"}}},"description":"Successfully returned Prometheus metrics"}}}
+>
+  
+</StatusCodes>
+

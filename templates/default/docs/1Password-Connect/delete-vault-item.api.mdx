@@ -1,0 +1,69 @@
+---
+id: delete-vault-item
+title: "Delete an Item"
+description: "Delete an Item"
+sidebar_label: "Delete an Item"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVlFv2zYQ/ivEYQ8bIEt2km2BnhY0KeZhKILE3h5cz2Cos8RGIlmScu0K+u/DUbJlxwFaFH3qk2Xy7vjddx/v2IA2aLmXWk0zSOEWS/T4D69LP/VYQQSGW16hR+sgXTSQoRNWGnKAFGYFsvl8esv0mvkCWXAMX9JjxaRjUkEEkmwN9wVEoHiFkMKGLOe1zCACix9raTGD1NsaI3CiwIpD2pCPR0ve/y3ev8/46POyufit/Qki8DtDcZy3UuXQttGXsFE+zGtWm4x7fB0Vof6eoJYUxxmtHDpyvRhf0c8p0MdaCHRuXZfljmWhABnjKlAIbQRX4wk5Ca08Kk+f3JhSilC15IOjIA3gllemRPqs0DmeE5Cp2vBSZszrZ1TMyVxxX1tK3nnuawfp1XjSniRnSRBedngPkV5ivmH9FsvQc1lKlQeS0Vptz4kYznsZ6M/Z7J49hk32Rmc4+ErlMUdLpd0v6acPKDyZSE+pwh0d99AzDC2ZnobfE6Atq6RzASZx0fF6+a28BvWy5iDilqSutGdSMSe0OWX48kdmeK547Qtt5WdSbVByR+7V15MbUAcy32n/VtcqowVXVxW3O0ihayvE7zpsRrDhZf3Fmhw7DNW4Ckn8sPUIbW7IPOSKorbS70IDf6OVQuFn4RakiyX1KM9z6u7B18HyZchuKFBL6mdChb7QNC66bhWmhC8ghSSw75KjKiTUxlzS7FtrS8VAu9kPlNqWkELhvUmTZGK4c5+0zeJSC14CdfUTg7BcaOfT6/H1ONlMgPDvE3ykonZ1PE2zgSfkFu1bbSvuIYW//p1BLwJitdsdKkGnBeqkWuu9jrkIOsaKS0LkamO09X8MmIWuhlEyue+X2ZTK2s1YB9FRPi5Nkj5KfBIlgbOyPtw9ztjN/ZSRSOyaC2RrbdlwSp9wfKSVs026OGhdF3ES/xr/DhFsR9xIl9e2HgnuMdc2XIXFIJslGZU6D0ycwudGxuQek3+yuUgEFwUmZJwEm1VtSs2z+JN8lhVmksfa5iv6Z+jfSuiq0sqtfFFXTytc4eXqQEU4M3abfDW5uB6b7eh8JzbdZduOtJU5TfRFA+t9lbVBxY08I12+oDsAG8Q3Eh1d5ytEVbzjVXnC5GU8DjLcjozVG5mhfddr4IWcyYS0LwX2Fn1cSsFo5ysexNpL6OzenUii2YvV49YnpuQyTLWQadNfyEXXFUl26fGLK9xJWjw8eJYR0LUil6Z54g7ntmxbWv5YIzXhxZK6rpX8ibRFL0Hp6DuDdM1Lh2foDq0ffn7o31K/sK98ML6aWb/I1W4YAAARPOPu5EEZnoLfA9zZi/EbYB0IbpdtBAXyDG2gr9u+EQKNP3I8m5IkrEO/vb37+252BxHQzD2SwKF/9R90wKu4mqazCH2xbQ8w+0fRsm3b/wH1eSwh
+sidebar_class_name: "delete api-method"
+info_path: 1Password-Connect/1-password-connect
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete an Item"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/vaults/{vaultUuid}/items/{itemUuid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete an Item
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"The UUID of the Vault the item is in","in":"path","name":"vaultUuid","required":true,"schema":{"pattern":"^[\\da-z]{26}$","type":"string"}},{"description":"The UUID of the Item to update","in":"path","name":"itemUuid","required":true,"schema":{"pattern":"^[\\da-z]{26}$","type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Successfully deleted an item"},"401":{"content":{"application/json":{"example":{"message":"Invalid token signature","status":401},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Invalid or missing token"},"403":{"content":{"application/json":{"example":{"message":"vault {vaultUuid} is not in scope","status":403},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Unauthorized access"},"404":{"content":{"application/json":{"examples":{"vaultNotFound":{"summary":"Vault not found","value":{"message":"vault {vaultUuid} not found","status":404}}},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Item not found"}}}
+>
+  
+</StatusCodes>
+

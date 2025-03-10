@@ -278,3 +278,14 @@ a.tw-btn {
   }
 }
 
+.markdown h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  white-space: normal !important;
+}
+
+.markdown h2.anchor {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+

@@ -1,0 +1,69 @@
+---
+id: download-file-by-id
+title: "Get the content of a File"
+description: "Get the content of a File"
+sidebar_label: "Get the content of a File"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdV9tu4zYQ/RVinlpAluwkbQMVBZpukq2LYhHk0j54DYORxjI3ksglR44NQf9eDCXfvUkQ7FNfbJoczvXMGboGbdBKUrocphDDpX4ucy3Ta5XjH8vhJQRg0RldOnQQ13DS7/NXokvCkngpjclV4jVEOiGkniOLsuAzl8ywkLyaaltIghgeVSntEgKgpUGIwZFVZQZN0wSQokusMqwKYrirkgSdgwBmKFO03v6H1nDvUjmjnWpFtw3hQhYmZ82SSCazAkv6VUxVjqUs8LfPYKyaP+EyNFh8hiN+BGsbf2OZ0exb6n8+Oz05FkYTwFl/8EKSvrjW57WqGgp0TmasZ1jOZa5SQfoJS+FUVkqqLEIAjiRVDuKz/qAJtjwylitIqq3PWlO9l80L0R2JFEmqXJWZoBkKtFbbwzg29vYV/Xl/fyPu/KH4oFPc3FUlYYbW57Db0o9fMCEWUeSzdsXmbjtEHav6KgHaikI5593kXIDP69nb8+pd57p/0nStqzL1hayKguEXAwNclJrE1J8FMJd5tVcMvi1q/nyoVNrsiG/KccZBKMLiuKEhYfGaIb4tav581dBcVjkdt/QPH71myt8Xtf96xdj/GWZ75fexYlJZRUuIR55nSkzo3kMvHo2bcQAkMwfxyN91MN5X+RHJh9rBU+ipkIJlIQAjrSyQPImN9kO9n6F4eBhe8g1W0NaRVx4XyglVQgCKZY2kGQTAXLYqJlfR0/TXSllMISZbYXCMe6tW8oDxXnPIQ5gXPmsv+LNC8Pd1Z9sV35KkRYa0TvTU6uK4P6vWfdGfffvjAAqkmeZxmCH56vEYgMin20VbzRNxxC7atG7EJl20IY1oxVYMMDtfIaCyOcQwIzJxFA2MdO5Z2zTMdSJz4BTsCPjtmXYUn/fP+9F8AOzlCrB3HAquxuMWbGt4RGnRXq8y/te/99CFziG3p5sSsDXfCqqc6hXTysQzLRZSsUeuMkZb+n3jc+Kz32V8cNNtiyG3afuy4Bm+icfFUdRpCXe0RHDQprdXd/fi4mYouOntVCYoptqKjZUu4HCr9w8OmQjRulbjIPwp/AUCWPSkUS6rbNVLJGGmrae20YYGxiyU68xnYtd9aVTI10O+H81PokQmM4xYOPIyk8rwKyp8Vk+qwFTJUNtswr8M/5okuih06SY0q4rHCU7wdLJOhbcZunk2GZyc982id3gSmpY8Fz1tVcbAH231lTZYSqMOkq720u0d24Cvl7TpOtzhVIVLWeQ7mTwN+x6Gi56xeq5StJ86DOzBmUUY+yrBTqLTyyEY7aiQHqwdhF7i0R10rFuXcEGRyaXyrwQfdN017ajlSEZgvM2Wvm95c4uyfOvy3hZtrLp3HAD3Hyus60fp8MHmTcPbXyvk6Tsa87i1Sj4yCJnjleN1CvFU5g4PfF+/YuCH246bfhRvHAVH4+42ZbncTH5+4D7hcmdUeIL9Hs4dHwvv8G1dg3e79sYR8Q7f1lhoxs3qn4ivb3t8kSRoaOviN/8O7cyVj1dMxLJq/150HqzpuFuwlaPO1XUr4Wm+ada+dg/lcdM0/wGkq8Wg
+sidebar_class_name: "get api-method"
+info_path: 1Password-Connect/1-password-connect
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get the content of a File"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/vaults/{vaultUuid}/items/{itemUuid}/files/{fileUuid}/content"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the content of a File
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"The UUID of the Vault the item is in","in":"path","name":"vaultUuid","required":true,"schema":{"format":"uuid","type":"string"}},{"description":"The UUID of the Item the File is in","in":"path","name":"itemUuid","required":true,"schema":{"format":"uuid","type":"string"}},{"description":"UUID of the file to get content from","in":"path","name":"fileUuid","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/octet-stream":{"schema":{"format":"binary","type":"string"}}},"description":"Success","headers":{"Content-Disposition":{"schema":{"example":"attachment; filename=\"privkey.pem\"","type":"string"}},"Content-Length":{"schema":{"example":"6432","type":"string"}}}},"401":{"content":{"application/json":{"example":{"message":"Invalid token signature","status":401},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Invalid or missing token"},"404":{"content":{"application/json":{"examples":{"fileNotFound":{"summary":"File not found","value":{"message":"file {fileUuid} not found","status":404}},"itemNotFound":{"summary":"Item not found","value":{"message":"item {itemUuid} not found","status":404}},"vaultNotFound":{"summary":"Vault not found","value":{"message":"vault {vaultUuid} not found","status":404}}},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"File not found"}}}
+>
+  
+</StatusCodes>
+

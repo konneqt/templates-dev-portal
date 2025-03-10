@@ -1,0 +1,61 @@
+---
+id: get-server-health
+title: "Get state of the server and its dependencies."
+description: "Get state of the server and its dependencies."
+sidebar_label: "Get state of the server and its dependencies."
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVU1v2zgQ/SvCXHqRJTvFooFODRo39RZIg8bdHoLAoKmxxEYiGXLk2DD034uhZPkrlz3ZIodvOG/eG+7AWHSClNGzHDK4Q3pEt0b3DUVFJcTg0FujPXrIdnA1HvOPNJpQE/8V1lZKBoD0jzea13Ajalt1J34LRUoXX427eZj9xNcGfTjnm7oWbgsZ3DzMIh9yRm9dcLQyLlop5ykSDZWoiTNgHrn+fAxrUTXIODla1DlqqTjf0w4YSkmEDPxWS4jBk6DGQwbzH9+n94v76fR2egttvIMavRcFh34xWqPkFGSSdGKF92/G5Yl/rRQhgxxQh6U97s2X+ey/KbTPMWhRc8zkoQeIeuDo5mHGt0bnFXMEk+QqmUDbtjF4WWItuBbruBmkOuZOK9uBIqz7DS+dstQhzUuM+CoYmVUkIoeF8oQO8z2pA842gfgsx8DAOeq3phZ65FDkYllh1MeFxuDGVkJp7hOVGMnGOdTU3YEz0NYGnsgpXUB7xN3unb2exIutdgAyyz8oueekqOKFxw7vdqgLDsHCORG+u068k3HowXtE7tvVUffBR/voi7JadsZroxzmkD116Q7gz+e3D50+zffje0DpUnXabVwFGZRENkvTykhRlcZTdj2+Hgd5kSg4EHpzPp9D3iEdtMDN6SUgdB4p8tGxpLhVNVJp2PYFMsFWUAkZpOXe+x5l4xRtH1minWJ6hubmBQOHSxQO3VfjakGQwb+/59BLmqvvdg/scWmhaqVXZj9JhAwTAWuhuHzfWGscfT64UJoa3vHWTBMW3ezyEB+R57M07VGSE5QULrrwc/o4Z3dGShO6lZCdyC8cnBwJ8GLzzNr/JJ8ghs1IWOWLxjUjnl6Fcd2IGljl/m1GlSkCE6fXF1YlfDzh8+n6KpVClphycBpiFo2tjMiTN/WiasyVSIwrFvxl+WshTV0b7RdUNvVygQv8uBioCDkTvy4Wk6vrsd2MLncS27llMzJOFUoHea72XTYWtbDqgnR1Rne42GGcjmRH1+UKU5VsRV2dMPkx6WS/GVln1ipHd99rYMgSTBLI7qdMH9HjcgnWeKpFEGsvof9rkxPFDCOFcENpGIWcJRCx6y30BOXgUHYwr+x2S+Hxl6valpdfG+TX7+mZ3zKneMryVxvz0RxdIPwFwwMpJdqjR+/yzWWSBi/fTefQtn8BfZi6cA==
+sidebar_class_name: "get api-method"
+info_path: 1Password-Connect/1-password-connect
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get state of the server and its dependencies."}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/health"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get state of the server and its dependencies.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"examples":{"WaitingForAPIRequest":{"summary":"API server waiting for first authenticated request","value":{"dependencies":[{"service":"sync","status":"TOKEN_NEEDED"},{"message":"Connected to./1password.sqlite","service":"sqlite","status":"ACTIVE"}],"name":"1Password Connect API","version":"1.2.1"}}},"schema":{"properties":{"dependencies":{"items":{"description":"The state of a registered server dependency.","properties":{"message":{"description":"Human-readable message for explaining the current state.","type":"string"},"service":{"type":"string"},"status":{"type":"string"}},"type":"object","title":"ServiceDependency"},"type":"array"},"name":{"type":"string"},"version":{"description":"The Connect server's version","type":"string"}},"required":["name","version"],"type":"object"}}},"description":"OK"}}}
+>
+  
+</StatusCodes>
+

@@ -1,0 +1,72 @@
+---
+id: patch-vault-item
+title: "Update a subset of Item attributes"
+description: "Applies a modified [RFC6902 JSON Patch](https://tools.ietf.org/html/rfc6902) document to an Item or ItemField. This endpoint only supports `add`, `remove` and `replace` operations."
+sidebar_label: "Update a subset of Item attributes"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWutv2zgS/1cI4oDbBRQ7zrM1boFzHKXR1rEDP5pt05xDS7TNRCIVknLiBP7fD0NSlvxIk+7tp8V9skwNyZnfPDnUC46oCiVLNRMc13EjTWNGFSIoEREbMxqh6+5Z8+jj7h76vddpo0uiw+nNL1OtU1WvVrUQsaowqscVISfVqU7iqhyHQP8rikSYJZRrpAUiHAWaJkhI83vGaBxVUH/KFKI8SgXjGgkez5HK0lRIrdAtiaJbD91KmogZvUWER/AnjUlIb5FIqSTAtKp859/51ZRyy/Kc8QkiSKU0ZGMWFrt5SE9p8fefCgWniHEzepsSPb1FRGvJRpmmSIzN+HIXJEZ3NNR1dFsdw2xVfTG/QbS4/c6xh5eUQYTr2KD0hWSxhv2wh1MiSUI1lQrXr1/WQO9PKRoMgtN8VzPRPDGAjCnEYAsGtMAo9jAnCcV1PAPKQcYi7GFJHzImaYTrWmbUwyqc0oTg+gvM0VTC7P9cf/8ekZ3nm5e9o8U/sIf1PIV1lJaMT/Bi4b3Fm1GiFihLI6Lpdq6A67+SqRu7DlX6RERzmBwKrinX8EjAYkMDffVOAc8vmD6RJI2pgmejCuC6obWEAZUlCZFzXMcDI8OqqRQ2oLCHZyTOqNGYSHEdO+sz+tRTXMfVMZkJyQwQjhbkBBjdBLDdEr0mE1Wt4cXNwis4M/a4ylojihBBnD4WBguo5xrYZI1EUZktY6MF1QuOyYjGuI7b9BHZ/dZxXhLjacY1lXuA/AabmyheGK/b6nIFmJX3cVxVe3fZ4cHuc8zJh1F0d5BJcazujg7kfdVKUHAJkphZyJjd65i/vbRdcou0V0xPg9Ot8gqJ7E55aLMh7V1GYxmSHx+eHo6f+HQ8ze7Fkwo/zJMHuTuv1bYprmuXMfG0z3RMf6BAsBsn05uwTPd4XDs8jNSU7R7szxU9fiT7WW2qji0gbt9GHDcKz1gBxFEADpRrJl2QeGR6aizYblRB/kPGZiTOEwK6HPSR8+t3wVZGpVKpgJfwuTExNJYiQWdZHJudXZDx8NI7XfQB78P1a/gFjDWZ7OEbD2sDp7UoCy1Y/qIcrSCkGbFTCZFeMwsCcPqCKc8SWNZa9BLoXIKbjYiWy7QebBsc2WRbc8kW0iKVyKRHyGulELDMrt4yty4V5JlkacasH47m7iE49cBy8xl2cDkPe3noLBnI7tGE873Rx0P3qrb78LF2WNtLD5cuuSHeUk/ujc2eYI2ljHAN8DkoCoxy0uUAkZLMcaEl46F4sbCLqVRwZZWxt7v7jtxQ6JTEcWdsDG5VqSHRdCLkvKzaVudT0MYevmz0eled7in2cOMyGDa7/qnf7geNFvZwz+9+8bvYw6eNfuOk0fOxh4Eg6A+bDTPlwr848bu98+DSLXXZ6fZhZuesf9Xo+sNW0PTbZmJn0D/tdLqlkZ7fHHT9YbvTh39XQddv+b3esNsZ9M2uJ43252Gj2ewM2rDmaTf44pfnB4bT/lfs4a5/1eieDi+7nU/dxgUQd5qDC9/M8y8aQau0Tq/TDBqtodk96H8dtgcggxHmNGg2WsOu37SA9Hrnw88+rN8c9Pqdi62GH0pKNI0aRj9jIROicR1DHt7RLLFuQ6IOj+dLp11fovBq8J8xlEC4PiaxKohHQsSUcKBm0c9VGx6OidJ+xDSNTowNvMmQ0sRyk1tLo9s8D774AMqp3/L7/im+eYdgNjyVgs0mRdklFkuf2EJp67P/CedMxqpUTRlPmUo6hgrBlf/uVSUUpsiVzKaEvAZ6hVrICYai7pWgameVuM7k1iDjMuMW4ZeMvGwYxFoEMnu9GXxMRDNmts7rz1rX2vYs2rr5jErFbLhy7yAPTKjcWMCy5RUxa2O5InCawhHUsiqCqxVfT3KUaynS+Wa6OhPSJXeb7AlKM5kKZY5Pt3movEUaTnlMmdTlFsuPEzZRvGqMPEtGILWHJ5TDAWur069yFYztqrAjFxqlkipTc8AR0dbU9r2aigxyI0X54hEaC2nZHa/WyBsB5Wes0YKyiV9PJO6IB3OUh1piwrjJ3ZdEqUchIw9NyYzmKGfKsUgyLcYsjt0J2ulrjhiPIN9RwJropTpgRaZQbjhmCbW6OVRgefjCHh70/G67ceGvpjzIPb2tYV3SkKVbRITjo30HDBj+GUeh4HcZD83B2lgOmML3pY6/40IiLZCi9jAcTokkIdRDMGLW0mKpO6daRcNMFna1ltnzFXpUr1r8Ms/7/b7f7UHgDj4FfXjofb046bS2i52QJ5bAzH0PJ4zb592N0iXj7CGjgd3MBkdMn8I4i2gzZ0ltgtdiSoOjkDguhHeqLYzXLRTZIrgw5dSZkFXtsqwjo7C2NZpSPslrUude+3vrvtUyRLnzFnvlcC/xODooAVLztoWx18LUJ7uqkF1rU5BgaahdPNwWfjdj7CvhvCQb7vW7QftTyeqXA6YCgiqm0276jZZJ44MujPQ7/Utb34FjXHTa/fPhV79hq6H2YKuJrJfCr2cCN/kHEdwe3LdkpzFz3Y7CoHOFlwpi/OXTNA4+fatF51/m33on7NvV02yURM/BeXcWnHfFt97JXfTH7+lo/8tzayJ+g8RiJw/dIWxWq5qUo6pMcMIedTSbhLFkTyN99KzTh/CJP1QNE9X0mI7jcH48Pkzuj2eTo2f5PD6Ud3fzrGrYrR7Jo8P07mF/f0T4MxcJP37Y21N3Bwe0mrNsoy1+nbJoOo2FqOgnmKLYM8X1/cPFhvsXJ4NVsz4hih4d7FAeCnAkR6dyOwd2K6hjupNUIzZGsAX612+oczm8aPwxDNqtoO0Pz4KWP+wF3/zh5xN0P7IdS8ZjxunQiHwLQdCEM4FuIQ7cgm8u65zRXG+e6hfrOlhn/pIUHtkUnNNQo8ZlYMNESDjEiDxYRuKRx4JENp6uiGlyXmwaNW9Whtbt1tLuaRmubWJYRa3Pa5OEvjWz5P/bKpA4z3dEUkgvBLkJXimXIztzRG0d4igqGzni3SHFmtlGTgfLYByBLtV2ud4TBM9gxhZHd2z/qFz7yfrk9WiZ77pJUeqZ5E0XbM7jq1h0PqMd22dwp5EKCsaIC3uJUGrho0cqKeT8GYto5Nk5UC/w/BaiAmwd7Nbe3/yFx4QqRSam9uUzEjPwgXvKkWITTnQmQSlweMsUrh/s1lY6PqugLlfaaNkg9wpFVBMWmy4N1LlSCrnVlt1+6wud9/uXqGdeoqaIftJefNiu67oh23SRAyAkSphStpl0T7nFdf/P4mqSAXpZ3kMs8qqbcaRCka4ivP93RnjASaanQrJnGiEShlQpC+7BT95YgF+3hT4TGV+7FTB+AeiOzbtScVFoxJT0L/kVzGKFvNDEwSI/027fyV5BvbHVpvJf3ezvrPg1rSxsmM4k03PTM3FJuW/crX59Y8Kn60TbM8GNhxOqpyKyV2nhtNT1duVWCWVXXxU6BrCpnOWXi9AusU2XerVay48BlViEJDbn/xUCMzwVStc/7H7Yrc5qJrznAvRAaVZPq2K84BElksqzvHj5/Qq6hUbJ5sBs3hZIw24GGrD4bnGb55eaS69fC72jB53bp7kuZHwscq8jofE6mhAGYrv75X8XwNjmlSsja/nJGwVgGy5BYa8EGrSy3CqVlVWqeMM2un6vb6ox08gfwzUJHL6LXRyqlZLBbbzEpY4QrlUOK8fYw087JGVqkslsxzV/jD9dF7Z3A0SxmBgkVtknKavA9ArMr872qiEJp7QKxFVDM8xSqBMrj+yeJTRiBJp2Q/iXwr9hKJJEcDXU0ywZDemQ7g+XUJg9K2o2Gdb2PuymTzubbyqp9dinHSHZBK6Qr0v9PpFSTlK2ATpbg9swVlj4Tmjh2hwBqCpzksQrSO5Xdo2tP+24ykO2nQ2s+QyQgIOxkDoKt67p7gilE2I8wpmQu1YmSGUjKPbFeMvN8oqZlM9o//8C409+geECjaZPuprGhHHXw3YN2umyXQrw18tfTthC2sP15YcLNx6GkAhTXl5GRNGBjBcLGH7IKCTI6xuIOJKRkYtdEVPwHG1vSpYV/EvXHft/Re/88GOrZHmNzueli1/s4Xs6X/kwxHzS8Vcwt/Hlx59gawmwuVqeUhJRaeCzr5uWj53+PC19UbFZMIFMdkYjDGmqf0hbTq6XjX7zHHt45L4jSaAaqGNJHuHYSx4tryJdnrHMGFzC80lmix67KGQyKPfKVwx5xnMPINZWNF5eLIXJpIvFEhxXj98sFov/AkIzyq0=
+sidebar_class_name: "patch api-method"
+info_path: 1Password-Connect/1-password-connect
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update a subset of Item attributes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"patch"}
+  path={"/vaults/{vaultUuid}/items/{itemUuid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Applies a modified [RFC6902 JSON Patch](https://tools.ietf.org/html/rfc6902) document to an Item or ItemField. This endpoint only supports `add`, `remove` and `replace` operations.
+
+When modifying a specific ItemField, the ItemField's ID in the `path` attribute of the operation object: `/fields/{fieldId}`
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"The UUID of the Vault the item is in","in":"path","name":"vaultUuid","required":true,"schema":{"pattern":"^[\\da-z]{26}$","type":"string"}},{"description":"The UUID of the Item to update","in":"path","name":"itemUuid","required":true,"schema":{"pattern":"^[\\da-z]{26}$","type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"examples":{"PatchItemAttr":{"summary":"Update specific Item attributes","value":[{"op":"replace","path":"/favorite","value":true},{"op":"remove","path":"/tags/1"}]},"PatchItemField":{"summary":"Add a new ItemField to the Item","value":[{"op":"add","path":"/fields","value":{"label":"New Field","type":"string","value":"hunter2"}}]},"PatchItemFieldAttr":{"summary":"Modify a specific ItemField attribute.","value":[{"op":"add","path":"/fields/s2ju540zlna8bdj4uro7sj64rk/label","value":"New field name"},{"op":"remove","path":"/fields/s2ju540zlna8bdj4uro7sj64rk/value"}]},"PatchItemFieldWithID":{"summary":"Modify or remove an ItemField.","value":[{"op":"replace","path":"/fields/r9qxq7xnhfhukoxsc8ymqr0y11","value":{"label":"Replacement Title","type":"string","value":"new value"}},{"op":"remove","path":"/fields/h2nl155dshi043yse7wa3u1hs7"}]},"ReplaceAllAttributes":{"summary":"Replace an entire Item with new fields. Equivalent to a PUT request.","value":[{"op":"replace","path":"/","value":{"...":"Any attr from FullItem schema","favorite":true,"tags":["tag1","tag2"],"title":"New Title"}}]}},"schema":{"items":{"properties":{"op":{"enum":["add","remove","replace"],"type":"string"},"path":{"description":"An RFC6901 JSON Pointer pointing to the Item document, an Item Attribute, and Item Field by Field ID, or an Item Field Attribute","example":"/fields/06gnn2b95example10q91512p5/label","type":"string"},"value":{"type":"object"}},"required":["op","path"],"type":"object"},"type":"array","title":"Patch"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"allOf":[{"properties":{"category":{"enum":["LOGIN","PASSWORD","API_CREDENTIAL","SERVER","DATABASE","CREDIT_CARD","MEMBERSHIP","PASSPORT","SOFTWARE_LICENSE","OUTDOOR_LICENSE","SECURE_NOTE","WIRELESS_ROUTER","BANK_ACCOUNT","DRIVER_LICENSE","IDENTITY","REWARD_PROGRAM","DOCUMENT","EMAIL_ACCOUNT","SOCIAL_SECURITY_NUMBER","MEDICAL_RECORD","SSH_KEY","CUSTOM"],"type":"string"},"createdAt":{"format":"date-time","readOnly":true,"type":"string"},"favorite":{"default":false,"type":"boolean"},"id":{"pattern":"^[\\da-z]{26}$","type":"string"},"lastEditedBy":{"readOnly":true,"type":"string"},"state":{"enum":["ARCHIVED","DELETED"],"readOnly":true,"type":"string"},"tags":{"items":{"type":"string"},"type":"array"},"title":{"type":"string"},"updatedAt":{"format":"date-time","readOnly":true,"type":"string"},"urls":{"example":[{"href":"https://example.com","primary":true},{"href":"https://example.org"}],"items":{"properties":{"href":{"format":"url","type":"string"},"label":{"type":"string"},"primary":{"type":"boolean"}},"required":["href"],"type":"object"},"type":"array"},"vault":{"properties":{"id":{"pattern":"^[\\da-z]{26}$","type":"string"}},"required":["id"],"type":"object"},"version":{"type":"integer"}},"required":["vault","category"],"type":"object","title":"Item"},{"properties":{"fields":{"items":{"properties":{"entropy":{"description":"For fields with a purpose of `PASSWORD` this is the entropy of the value","readOnly":true,"type":"number"},"generate":{"default":false,"description":"If value is not present then a new value should be generated for this field","type":"boolean"},"id":{"type":"string"},"label":{"type":"string"},"purpose":{"description":"Some item types, Login and Password, have fields used for autofill. This property indicates that purpose and is required for some item types.","enum":["","USERNAME","PASSWORD","NOTES"],"type":"string"},"recipe":{"description":"The recipe is used in conjunction with the \"generate\" property to set the character set used to generate a new secure value","properties":{"characterSets":{"items":{"enum":["LETTERS","DIGITS","SYMBOLS"],"type":"string"},"maximum":3,"minimum":0,"type":"array","uniqueItems":true},"excludeCharacters":{"description":"List of all characters that should be excluded from generated passwords.","example":"abc1","type":"string"},"length":{"default":32,"description":"Length of the generated value","maximum":64,"minimum":1,"type":"integer"}},"type":"object","title":"GeneratorRecipe"},"section":{"properties":{"id":{"type":"string"}},"type":"object"},"type":{"default":"STRING","enum":["STRING","EMAIL","CONCEALED","URL","TOTP","DATE","MONTH_YEAR","MENU"],"type":"string"},"value":{"type":"string"}},"required":["id","type"],"type":"object","title":"Field"},"type":"array"},"files":{"items":{"example":{"content":"VGhlIGZ1dHVyZSBiZWxvbmdzIHRvIHRoZSBjdXJpb3VzLgo=","content_path":"v1/vaults/ionaiwtdvgclrixbt6ztpqcxnq/items/p7eflcy7f5mk7vg6zrzf5rjjyu/files/6r65pjq33banznomn7q22sj44e/content","id":"6r65pjq33banznomn7q22sj44e","name":"foo.txt","size":35},"properties":{"content":{"description":"Base64-encoded contents of the file. Only set if size <= OP_MAX_INLINE_FILE_SIZE_KB kb and `inline_files` is set to `true`.","format":"byte","type":"string"},"content_path":{"description":"Path of the Connect API that can be used to download the contents of this file.","readOnly":true,"type":"string"},"id":{"description":"ID of the file","type":"string"},"name":{"description":"Name of the file","type":"string"},"section":{"description":"For files that are in a section, this field describes the section.","properties":{"id":{"type":"string"}},"type":"object"},"size":{"description":"Size in bytes of the file","type":"integer"}},"type":"object","title":"File"},"type":"array"},"sections":{"items":{"properties":{"id":{"type":"string"},"label":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"}],"title":"FullItem"}}},"description":"OK - Item updated. If no Patch operations were provided, Item is unmodified."},"401":{"content":{"application/json":{"example":{"message":"Invalid token signature","status":401},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Invalid or missing token"},"403":{"content":{"application/json":{"example":{"message":"vault {vaultUuid} is not in scope","status":403},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Unauthorized access"},"404":{"content":{"application/json":{"examples":{"itemNotFound":{"summary":"Item not found","value":{"message":"item {itemUuid} not found","status":404}},"vaultNotFound":{"summary":"Vault not found","value":{"message":"vault {vaultUuid} not found","status":404}}},"schema":{"properties":{"message":{"description":"A message detailing the error","type":"string"},"status":{"description":"HTTP Status Code","type":"integer"}},"type":"object","title":"ErrorResponse"}}},"description":"Item not found"}}}
+>
+  
+</StatusCodes>
+
