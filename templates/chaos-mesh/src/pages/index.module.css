@@ -66,9 +66,9 @@
 
 /* Estilização geral */
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 24px;
 }
 
 .main {
@@ -90,6 +90,8 @@
   position: relative;
   z-index: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   padding: 5rem 2rem;
 }
@@ -178,6 +180,7 @@
 .buttonGroup {
   display: flex;
   gap: 12px;
+  justify-content: flex-start;
   margin-top: 20px;
 }
 
@@ -282,5 +285,30 @@
 @media (max-width: 1024px) {
   .imageContainer {
     display: none;
+  }
+}
+
+@media (min-width: 1600px) {
+  .heroTitle {
+    font-size: 4.5rem; 
+  }
+}
+@media (min-width: 1600px) {
+  .description {
+    font-size: 1.5rem;
+    max-width: 25%; 
+  }
+}
+
+@media (min-width: 1600px) {
+  .flexContainer {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1600px) {
+  .textContainer {
+    max-width: 800px;
   }
 }

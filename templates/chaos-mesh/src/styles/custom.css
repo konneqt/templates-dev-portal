@@ -245,36 +245,34 @@ a.tw-btn {
   margin: 0;
 }
 
-/* Conteúdo do card */
+
 .feature-content {
   font-size: 14px;
   color: var(--color-text);
 }
 
-/* Adicione isso ao seu arquivo CSS ou componente de estilo */
+
 .mesh {
-  min-width: 1024px; /* Define uma largura mínima para o SVG */
-  width: 100%; /* Mantém o comportamento responsivo para telas maiores */
-  height: 125%; /* Preserva a proporção atual */
+  min-width: 1024px; 
+  width: 100%; 
+  height: 125%;
   transform: rotate3d(2, -.4, -1, 25deg);
   position: absolute;
   top: -10%;
   left: 0;
 }
 
-/* Garante que o container pai tenha overflow hidden em telas pequenas */
 .mesh-container {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
 
-/* Ajuste para dispositivos móveis - mantém a malha visível */
 @media (max-width: 768px) {
   .mesh {
     transform-origin: center center;
     left: 50%;
-    margin-left: -512px; /* Metade da largura mínima */
+    margin-left: -512px; 
   }
 }
 
@@ -287,5 +285,19 @@ a.tw-btn {
 .markdown h2.anchor {
   font-size: 1.3rem;
   font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .feature-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .feature-card {
+    width: 20%;
+    min-width: 300px;
+  }
 }
 
