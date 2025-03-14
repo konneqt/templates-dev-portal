@@ -75,7 +75,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .delete > .menu__link::before {
-  content: 'del';
+  content: 'delete';
   background-color: var(--openapi-code-red);
 }
 
