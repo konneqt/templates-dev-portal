@@ -8,7 +8,6 @@ import { clsx } from 'clsx'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React, { useEffect } from 'react'
-
 import IconOctocat from '../../static/img/icons/octocat.svg'
 import Mesh from '../components/Mesh'
 import styles from './index.module.css'

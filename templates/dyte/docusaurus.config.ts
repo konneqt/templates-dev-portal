@@ -3,8 +3,6 @@ import { getOpenApiPlugins } from "./openApiPlugins";
 
 const meta = {
   title: "Quantum API Dev Portal",
-  tagline:
-    "Explore comprehensive documentation for Dyte, including guides, references, and best practices.",
   url: "https://konneqt.io",
   baseUrl: "/quantum-dev-portal/",
   favicon: "/logo/just_q_blue.png",
@@ -60,7 +58,7 @@ const config = {
   ],
   themeConfig: {
     // Replace with your project's social card
-    image: "/img/dyte-docs-card.png",
+    image: "img/just_q_blue.png",
     colorMode: {
       defaultMode: "dark",
     },
@@ -80,12 +78,12 @@ const config = {
         width: "40px",
       },
       items: [
-        {
+       /*  {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
           label: "Introduction",
-        },
+        }, */
         {
           label: "Documentation",
           to: "/quantum-dev-portal/docs/",

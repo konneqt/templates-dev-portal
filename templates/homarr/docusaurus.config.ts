@@ -13,7 +13,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   // Used for publishing to GitHub Pages
   organizationName: 'konneqt',
-  projectName: 'documentation',
+  projectName: 'quantum-dev-portal',
   // Has to be set even if not using translations
   i18n: {
     defaultLocale: 'en',
@@ -63,12 +63,12 @@ const config: Config = {
         src: 'img/just_q_blue.png',
       },
       items: [
-        {
+        /* {
           type: 'docSidebar',
           sidebarId: 'ApiSidebar',
           position: 'left',
           label: 'Introduction',
-        },
+        }, */
         {
           label: 'Documentation',
           to: '/quantum-dev-portal/docs/apis',
@@ -94,23 +94,7 @@ const config: Config = {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
     },
-    metadata: [
-      {
-        name: 'keywords',
-        content: 'Homarr, Dashboard, Selfhosted, Hosting, Modules, Open-Source',
-      },
-    ],
-    zoom: {
-      selector: '.markdown img',
-      background: {
-        light: 'rgb(255, 255, 255)',
-        dark: 'rgb(50, 50, 50)',
-      },
-      config: {
-        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
-        margin: 80,
-      },
-    },
+   
     tableOfContents: {
       minHeadingLevel: 2,
       maxHeadingLevel: 4,
