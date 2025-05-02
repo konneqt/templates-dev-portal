@@ -4,7 +4,6 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import { EnumChangefreq } from 'sitemap';
 import { getOpenApiPlugins } from './openApiPlugins';
 
-const a11yEmoji = require('@fec/remark-a11y-emoji');
 
 const config: Config = {
   title: 'Quantum API Dev Portal',
@@ -29,7 +28,7 @@ const config: Config = {
     format: 'detect',
   },
 
-  themes: ['@docusaurus/theme-mermaid', 'docusaurus-theme-openapi-docs'],
+  themes: ['docusaurus-theme-openapi-docs'],
 
   presets: [
     [

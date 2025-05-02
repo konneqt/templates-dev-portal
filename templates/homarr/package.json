@@ -33,7 +33,10 @@
     "@docusaurus/core": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
     "@docusaurus/utils": "^3.7.0",
+    "@google/generative-ai": "^0.24.1",
     "@mdx-js/react": "^3.1.0",
+    "@tabler/icons-react": "^3.31.0",
+    "@tailwindcss/postcss": "^4.1.5",
     "axios": "^1.8.1",
     "clear": "^0.1.0",
     "docusaurus-plugin-openapi-docs": "^4.3.5",
@@ -56,7 +59,11 @@
     "type": "git",
     "url": "https://github.com/konneqt/quantum-dev-portal"
   },
-  "keywords": ["docusaurus", "documentation", "openapi"],
+  "keywords": [
+    "docusaurus",
+    "documentation",
+    "openapi"
+  ],
   "author": "Konneqt",
   "license": "MIT",
   "browserslist": {
@@ -74,5 +81,4 @@
   "engines": {
     "node": ">=18.0"
   }
-  
 }
