@@ -114,7 +114,24 @@ const config = {
   themes:['docusaurus-theme-openapi-docs'],
 
   plugins: [
-    ...getOpenApiPlugins()
+    ...getOpenApiPlugins(),
+    function (context, options) {
+      return {
+        name: "custom-webpack-config",
+        configureWebpack(config, isServer, utils) {
+          return {
+            module: {
+              rules: [
+                {
+                  test: /\.(yaml|yml)$/,
+                  use: "yaml-loader",
+                },
+              ],
+            },
+          };
+        },
+      };
+    },
   ],
 }
 
