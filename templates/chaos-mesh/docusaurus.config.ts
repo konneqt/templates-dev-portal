@@ -7,17 +7,10 @@ const config = {
   title: 'Quantum API Dev Portal',
   tagline: 'A Powerful Documentation Plataform',
   favicon: '/img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://konneqti.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/quantum-dev-portal/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'konneqt', // Usually your GitHub org/user name.
-  projectName: 'konneqt.io', // Usually your repo name.
+  organizationName: 'konneqt', 
+  projectName: 'konneqt.io', 
 
   onBrokenLinks: 'warn',
   trailingSlash: true,
@@ -46,8 +39,6 @@ const config = {
         docs: {
           sidebarPath: './sidebars.ts',
           docItemComponent: '@theme/ApiItem',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editLocalizedFiles: true,
         },
         theme: {

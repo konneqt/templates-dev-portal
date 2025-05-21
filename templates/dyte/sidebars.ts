@@ -27,11 +27,6 @@ function findSidebar(directory: string): any[] {
               label: item.name,
               items: [
                 ...originalItems,
-                {
-                  type: 'link',
-                  label: 'OWASP API Security Report',
-                  href: `/OWASPValidationPage?apiName=${encodeURIComponent(item.name)}`
-                },
               ],
             };
 
