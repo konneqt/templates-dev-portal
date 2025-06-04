@@ -14,11 +14,6 @@ const config = {
 
   onBrokenLinks: 'warn',
   trailingSlash: true,
-  future: {
-    v4: {
-      useCssCascadeLayers: false,
-    },
-  },
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh'],
