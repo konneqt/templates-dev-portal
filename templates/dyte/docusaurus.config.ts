@@ -18,6 +18,9 @@ const config = {
   ...meta,
   plugins,
   future: {
+    v4: {
+      useCssCascadeLayers: false,
+    },
     experimental_faster: true,
   },
   staticDirectories: ["static"],

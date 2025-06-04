@@ -10,10 +10,8 @@ const config: Config = {
   url: 'https://konneqt.io',
   baseUrl: '/quantum-dev-portal',
   favicon: 'img/favicon.ico',
-  // Used for publishing to GitHub Pages
   organizationName: 'konneqt',
   projectName: 'quantum-dev-portal',
-  // Has to be set even if not using translations
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
