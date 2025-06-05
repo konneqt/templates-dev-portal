@@ -7,7 +7,7 @@ import Layout from '@theme/Layout'
 import { clsx } from 'clsx'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react' // Adicione useState aqui
 import IconOctocat from '../../static/img/icons/octocat.svg'
 import Mesh from '../components/Mesh'
 import styles from './index.module.css'
@@ -20,9 +20,23 @@ const description =
 
 function Home() {
   const { siteConfig, i18n } = useDocusaurusContext()
-  const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark'
+  const [isDarkTheme, setIsDarkTheme] = useState(false) // State para o tema
 
   useEffect(() => {
+    // Verifica o tema apenas no browser
+    const checkTheme = () => {
+      setIsDarkTheme(document.documentElement.getAttribute('data-theme') === 'dark')
+    }
+    
+    checkTheme() // Verifica na montagem
+    
+    // Observer para mudanças de tema (opcional)
+    const observer = new MutationObserver(checkTheme)
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    })
+
     document.querySelector('.navbar__inner').classList.add(styles.container)
 
     gsap.from(`.${styles.scrollToDisplay}`, {
@@ -47,6 +61,9 @@ function Home() {
         toggleActions: 'restart none none none',
       },
     })
+
+    // Cleanup
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -62,8 +79,8 @@ function Home() {
 
         <div className={styles.hero}>
           <div className={styles.container}>
-            <div >
-              <div >
+            <div>
+              <div>
                 <h1 className={clsx(styles.heroTitle)}>
                   {i18n.currentLocale === 'en' && (
                     <>
@@ -77,7 +94,8 @@ function Home() {
                 <p className={styles.description}>
                   <Translate id="home.desc">{description}</Translate>
                 </p>
-                <div className={styles.buttonGroup}>
+                {/* Agora você pode usar isDarkTheme aqui */}
+                <div className={clsx(styles.buttonGroup, isDarkTheme && styles.darkTheme)}>
                   <Link to="/quantum-dev-portal/docs/apis/" className={styles.primaryButton}>
                     <Translate id="home.getstarted">Documentation →</Translate>
                   </Link>
