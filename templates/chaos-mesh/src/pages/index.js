@@ -7,11 +7,12 @@ import Layout from '@theme/Layout'
 import { clsx } from 'clsx'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useEffect, useState } from 'react' // Adicione useState aqui
+import React, { useEffect, useState } from 'react' 
 import IconOctocat from '../../static/img/icons/octocat.svg'
 import Mesh from '../components/Mesh'
 import styles from './index.module.css'
 import HomepageFeatures from '../components/features'
+import styleConfig from '../../styles.config.json';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -20,17 +21,19 @@ const description =
 
 function Home() {
   const { siteConfig, i18n } = useDocusaurusContext()
-  const [isDarkTheme, setIsDarkTheme] = useState(false) // State para o tema
+  const [isDarkTheme, setIsDarkTheme] = useState(false) 
+
+  Object.entries(styleConfig.colors).forEach(([key, value]) => {
+    document.documentElement.style.setProperty(key, value);
+  });
 
   useEffect(() => {
-    // Verifica o tema apenas no browser
     const checkTheme = () => {
       setIsDarkTheme(document.documentElement.getAttribute('data-theme') === 'dark')
     }
     
-    checkTheme() // Verifica na montagem
+    checkTheme() 
     
-    // Observer para mudanças de tema (opcional)
     const observer = new MutationObserver(checkTheme)
     observer.observe(document.documentElement, {
       attributes: true,
@@ -62,7 +65,6 @@ function Home() {
       },
     })
 
-    // Cleanup
     return () => observer.disconnect()
   }, [])
 
@@ -72,7 +74,6 @@ function Home() {
         <title>Quantum API Dev Portal</title>
       </Head>
       <main className={styles.main}>
-        {/* Mesh como background */}
         <div className={styles.meshBackground}>
           <BrowserOnly>{() => <Mesh />}</BrowserOnly>
         </div>
@@ -94,7 +95,6 @@ function Home() {
                 <p className={styles.description}>
                   <Translate id="home.desc">{description}</Translate>
                 </p>
-                {/* Agora você pode usar isDarkTheme aqui */}
                 <div className={clsx(styles.buttonGroup, isDarkTheme && styles.darkTheme)}>
                   <Link to="/quantum-dev-portal/docs/apis/" className={styles.primaryButton}>
                     <Translate id="home.getstarted">Documentation →</Translate>

@@ -1,0 +1,14 @@
+{
+    "logoUrl": "img/logos/just_q_blue.png",
+    "logoUrlDark": "img/logos/just_q_blue.png",
+    "companyName": "Quantum API DevPortal",
+    "colors": {
+        "--primary-color": "#6379f2",
+        "--primary-color-dark": "#f4f4f5",
+        "--secondary-color": "#0590dd",
+        "--text-color":"#71717a"
+    },
+    "heroUrl": "",
+    "heroUrlDark": ""
+}
+

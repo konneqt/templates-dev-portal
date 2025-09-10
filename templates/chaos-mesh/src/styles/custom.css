@@ -5,12 +5,11 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial,
-    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --ifm-font-family-base: 'Geist', sans-serif;
 
   --ifm-color-primary: #6379f2;
   --ifm-color-primary-dark: #6379f2;
@@ -206,16 +205,28 @@ a.tw-btn {
 /* Card de cada feature */
 .feature-card {
   background: transparent;
-  border: 1px solid white; 
-  box-shadow: 0px 4px 10px rgba(26, 25, 25, 0.199);
+  border: 1px solid #e0dcdc; 
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 300px;
+  width: 100%;
+  max-width: 350px;
+  min-height: 220px;
+  transition: all 0.3s ease;
 }
 
+.feature-card:hover {
+  box-shadow: 0px 4px 10px rgba(26, 25, 25, 0.199);
+  transform: translateY(-5px);
+}
+.clickable-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none !important; 
+  color: inherit !important;
+}
 
 
 
@@ -223,18 +234,26 @@ a.tw-btn {
 .feature-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
   margin-bottom: 16px;
+  width: 100%;
 }
 
 /* Ícone do card */
 .feature-icon {
-  color: var(--color-icon);
+  color: #0a0a0a;
   padding: 12px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+[data-theme='dark'] .feature-icon {
+  color: #fafafa;
 }
 
 /* Título */
@@ -248,7 +267,7 @@ a.tw-btn {
 
 .feature-content {
   font-size: 14px;
-  color: var(--color-text);
+  color: var(--text-color);
 }
 
 
@@ -300,4 +319,56 @@ a.tw-btn {
     min-width: 300px;
   }
 }
+
+.feature-description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 800px;
+  line-height: 1.6;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .feature-container {
+    gap: 16px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 64px;
+  }
+  
+  .feature-mainText {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .feature-description {
+      font-size: 1rem;
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  
+  .feature-card {
+    width: 100%;
+    max-width: none;
+    padding: 16px;
+    min-height: 180px;
+  }
+  
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+  }
+  
+  .feature-title {
+    font-size: 15px;
+  }
+  
+  .feature-content {
+    font-size: 13px;
+  }
+}
+
 

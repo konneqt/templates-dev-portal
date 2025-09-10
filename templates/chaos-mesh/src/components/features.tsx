@@ -1,59 +1,80 @@
-import { IconAdjustments, IconFileInfinity, IconPlugConnected, TablerIcon } from '@tabler/icons-react'
-import React from 'react'
+import { IconArrowRight } from "@tabler/icons-react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { loadAllFilesContent } from "../../utils/loadFiles";
 
 interface Feature {
-  icon: TablerIcon
-  title: string
-  content: string
+  title: string;
+  content: string;
+  link: string;
 }
 
-const featureList: Feature[] = [
-  {
-    icon: IconPlugConnected,
-    title: 'OpenAPI Integration',
-    content:
-      ' Our Dev Portal uses docusaurus-plugin-openapi-docs, which is highly compatible with the OpenAPI 3.x and Swagger 2.0 specifications. This allows you to easily integrate your API with the portal, transforming your OpenAPI definitions into clear and precise documentation without manual effort. ',
-  },
-  {
-    icon: IconFileInfinity,
-    title: 'Quick Documentation',
-    content:
-      'Our platform offers a fast and efficient way of generating documentation for your API, using your OpenAPI definition files. This means that you can obtain up-to-date documentation continuously and without interruption and without the need for constant manual updates.',
-  },
-  {
-    icon: IconAdjustments,
-    title: 'Customizable Interface',
-    content:
-      'As well as being functional, our solution offers a visually appealing and easy-to-use interface, built with Docusaurus and Infima, which provides a professional and responsive appearance for your Dev Portal. The result is a platform that is both useful for developers and easy to navigate for API consumers.',
-  },
-]
+declare var require: {
+  context(
+    path: string,
+    recursive?: boolean,
+    regExp?: RegExp
+  ): {
+    keys(): string[];
+    <T = any>(id: string): T;
+  };
+};
 
-function FeatureComponent({ icon: Icon, title, content }: Feature) {
+const requireContext = require.context(
+  "../../cli/apis",
+  false,
+  /\.(json|ya?ml)$/
+);
+const allFilesContent = loadAllFilesContent(requireContext);
+
+const featureList: Feature[] = allFilesContent.map((file: any) => {
+
+  const description = file?.info?.description
+  ? file.info.description.length > 250
+    ? file.info.description.slice(0, 250) + "..."
+    : file.info.description
+  : "No description";
+
+  return {
+    link: `/docs/${file.linkTitle}/${file.title.trim().toLowerCase().replaceAll(" ", "-").replaceAll(".", "-")}`,
+    title: file.title,
+    content: description,
+  };
+});
+
+function FeatureComponent({ title, content, link }: Feature) {
   return (
-    <div className="feature-card">
+    <Link className="feature-card clickable-card" to={link}>
       <div className="feature-header">
-        <div className="feature-icon">
-          <Icon size={40} />
-        </div>
         <h3 className="feature-title">{title}</h3>
+        <div className="feature-icon">
+          <IconArrowRight size={40} stroke={1.5} />
+        </div>
       </div>
       <p className="feature-content">{content}</p>
-    </div>
-  )
+    </Link>
+  );
 }
 
 export default function HomepageFeatures() {
+
+  const hasApis = requireContext.keys().length > 0;
   return (
     <>
-      <h1 className="feature-mainText">
-        Your API Documentation: <br/>
-        <span className="feature-subtitle"> Integrated, Automated, Customized</span>
-      </h1>
+      <h1 className="feature-mainText">Explore our APIs</h1>
+      <p className="feature-description">
+        Discover how our APIs can transform your development and drive your
+        projects forward with innovation and efficiency.
+      </p>
       <div className="feature-container">
-        {featureList.map((feature, idx) => (
-          <FeatureComponent key={idx} {...feature} />
-        ))}
+      {hasApis ? (
+          featureList.map((feature, idx) => (
+            <FeatureComponent key={idx} {...feature} />
+          ))
+        ) : (
+          <p className="feature-no-apis">No APIs available.</p>
+        )}
       </div>
     </>
-  )
+  );
 }

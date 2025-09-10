@@ -2,6 +2,17 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 import path from 'path';
 import fs from 'fs';
 
+function formatLabel(label: string): string {
+  return label
+    .replace(/[-_]/g, ' ')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\w\S*/g, (txt) => 
+      txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    );
+}
+
 function findSidebar(directory: string): any[] {
   try {
     if (!fs.existsSync(directory)) {
@@ -24,7 +35,7 @@ function findSidebar(directory: string): any[] {
 
             const category = {
               type: 'category',
-              label: item.name,
+              label: formatLabel(item.name),
               items: [
                 ...originalItems,
               ],
@@ -48,30 +59,25 @@ function findSidebar(directory: string): any[] {
 }
 
 const baseDirectory = path.resolve(__dirname, './docs');
-
 const kcSideBar = findSidebar(baseDirectory);
 
+
 const sidebars: SidebarsConfig = {
-  ApiSidebar: [
- /*    'intro',
-    {
-      type: 'category',
-      label: 'Tutorial for DevPortal',
-      items: ['tutorial-basics/create-a-document'],
-    },
-    'protect_apis', */
+  tutorialSidebar: [
     {
       type: 'category',
       label: 'Quantum Admin Apis',
       link: {
         type: 'generated-index',
         title: 'Quantum Admin APIs',
-        description: 'Find the full documentation for all their APIs here, including details on endpoints, authentication and usage examples.',
+        description:
+          'Find the full documentation for all their APIs here, including details on endpoints, authentication and usage examples.',
         slug: '/apis/',
       },
-      items: kcSideBar,
+      items: kcSideBar, 
     },
   ],
 };
 
 export default sidebars;
+

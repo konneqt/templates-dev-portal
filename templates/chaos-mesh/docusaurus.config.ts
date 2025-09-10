@@ -1,14 +1,17 @@
 
 import { themes as prismThemes } from 'prism-react-renderer'
 import { getOpenApiPlugins } from './openApiPlugins'
+import stylesConfig from './styles.config.json';
+import searchLocal from "@easyops-cn/docusaurus-search-local";
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Quantum API Dev Portal',
   tagline: 'A Powerful Documentation Plataform',
   favicon: '/img/favicon.ico',
-  url: 'https://konneqti.io',
-  baseUrl: '/quantum-dev-portal/',
+  url: 'https://konneqt.io',
+  baseUrl: '/',
   organizationName: 'konneqt', 
   projectName: 'konneqt.io', 
 
@@ -52,14 +55,14 @@ const config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
-    image: "img/just_q_blue.png",
+    image: stylesConfig.logoUrl,
     navbar: {
       hideOnScroll: true,
-      title: 'Quantum API Dev Portal',
+      title: stylesConfig.companyName,
       logo: {
         alt: 'Quantum Dev Portal',
-        src: 'img/logos/just_q_blue.png',
-        srcDark: 'img/logos/just_q_blue.png',
+        src: stylesConfig.logoUrl,
+        srcDark: stylesConfig.logoUrlDark,
       },
       items: [
      /*    {
@@ -70,7 +73,7 @@ const config = {
         }, */
         {
           label: 'Documentation',
-          to: '/quantum-dev-portal/docs/apis',
+          to: '/docs/apis',
         },
         {
           href: 'https://github.com/konneqt/quantum-dev-portal',
@@ -101,7 +104,23 @@ const config = {
       additionalLanguages: ['bash'],
     },
   },
-  themes:['docusaurus-theme-openapi-docs'],
+  themes:['docusaurus-theme-openapi-docs',  [
+    searchLocal,
+    {
+      hashed: true,
+      indexDocs: true,
+      indexBlog: false,
+      indexPages: false,
+      language: ["en"],
+      docsRouteBasePath: "/docs", 
+      searchResultLimits: 8,
+      searchResultContextMaxLength: 50,
+      explicitSearchResultPath: true,
+      searchBarShortcut: true,
+      searchBarShortcutHint: true,
+      highlightSearchTermsOnTargetPage: true,
+    }
+  ]],
 
   plugins: [
     ...getOpenApiPlugins(),
