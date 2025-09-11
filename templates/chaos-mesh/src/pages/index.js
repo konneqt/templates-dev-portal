@@ -1,46 +1,47 @@
-import BrowserOnly from '@docusaurus/BrowserOnly'
-import Head from '@docusaurus/Head'
-import Link from '@docusaurus/Link'
-import Translate, { translate } from '@docusaurus/Translate'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import Layout from '@theme/Layout'
-import { clsx } from 'clsx'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useEffect, useState } from 'react' 
-import IconOctocat from '../../static/img/icons/octocat.svg'
-import Mesh from '../components/Mesh'
-import styles from './index.module.css'
-import HomepageFeatures from '../components/features'
-import styleConfig from '../../styles.config.json';
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import Head from "@docusaurus/Head";
+import Link from "@docusaurus/Link";
+import Translate, { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import { clsx } from "clsx";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useState } from "react";
+import IconOctocat from "../../static/img/icons/octocat.svg";
+import Mesh from "../components/Mesh";
+import styles from "./index.module.css";
+import HomepageFeatures from "../components/features";
+import styleConfig from "../../styles.config.json";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const description =
-  'Our API Dev Portal is an environment designed to offer a more intuitive and organized experience when viewing your API documentation. Using Docusaurus, we provide a modern and pleasant interface, facilitating access to essential information for developers.'
+  "Our API Dev Portal is an environment designed to offer a more intuitive and organized experience when viewing your API documentation. Using Docusaurus, we provide a modern and pleasant interface, facilitating access to essential information for developers.";
 
 function Home() {
-  const { siteConfig, i18n } = useDocusaurusContext()
-  const [isDarkTheme, setIsDarkTheme] = useState(false) 
-
-  Object.entries(styleConfig.colors).forEach(([key, value]) => {
-    document.documentElement.style.setProperty(key, value);
-  });
+  const { siteConfig, i18n } = useDocusaurusContext();
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
+    Object.entries(styleConfig.colors).forEach(([key, value]) => {
+      document.documentElement.style.setProperty(key, value);
+    });
     const checkTheme = () => {
-      setIsDarkTheme(document.documentElement.getAttribute('data-theme') === 'dark')
-    }
-    
-    checkTheme() 
-    
-    const observer = new MutationObserver(checkTheme)
+      setIsDarkTheme(
+        document.documentElement.getAttribute("data-theme") === "dark"
+      );
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['data-theme']
-    })
+      attributeFilter: ["data-theme"],
+    });
 
-    document.querySelector('.navbar__inner').classList.add(styles.container)
+    document.querySelector(".navbar__inner").classList.add(styles.container);
 
     gsap.from(`.${styles.scrollToDisplay}`, {
       duration: 1,
@@ -49,9 +50,9 @@ function Home() {
       stagger: 0.25,
       scrollTrigger: {
         trigger: `.${styles.scrollToDisplay}`,
-        toggleActions: 'restart none none none',
+        toggleActions: "restart none none none",
       },
-    })
+    });
 
     gsap.from(`.${styles.scrollToDisplayX}`, {
       duration: 1,
@@ -61,15 +62,15 @@ function Home() {
       stagger: 0.25,
       scrollTrigger: {
         trigger: `.${styles.scrollToDisplayX}`,
-        toggleActions: 'restart none none none',
+        toggleActions: "restart none none none",
       },
-    })
+    });
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <Layout description={translate({ message: description, id: 'home.desc' })}>
+    <Layout description={translate({ message: description, id: "home.desc" })}>
       <Head>
         <title>Quantum API Dev Portal</title>
       </Head>
@@ -83,11 +84,15 @@ function Home() {
             <div>
               <div>
                 <h1 className={clsx(styles.heroTitle)}>
-                  {i18n.currentLocale === 'en' && (
+                  {i18n.currentLocale === "en" && (
                     <>
-                      <span>Document </span> <br/>
+                      <span>Document </span> <br />
                       <span>Your</span>
-                      <span className={clsx(styles.highlight)}> APIs </span> <br/>
+                      <span className={clsx(styles.highlight)}>
+                        {" "}
+                        APIs{" "}
+                      </span>{" "}
+                      <br />
                       <span>Efficiently</span>
                     </>
                   )}
@@ -95,11 +100,22 @@ function Home() {
                 <p className={styles.description}>
                   <Translate id="home.desc">{description}</Translate>
                 </p>
-                <div className={clsx(styles.buttonGroup, isDarkTheme && styles.darkTheme)}>
-                  <Link to="/quantum-dev-portal/docs/apis/" className={styles.primaryButton}>
+                <div
+                  className={clsx(
+                    styles.buttonGroup,
+                    isDarkTheme && styles.darkTheme
+                  )}
+                >
+                  <Link
+                    to="/docs/apis/"
+                    className={styles.primaryButton}
+                  >
                     <Translate id="home.getstarted">Documentation →</Translate>
                   </Link>
-                  <Link to="https://github.com/konneqt/quantum-dev-portal" className={styles.secondaryButton}>
+                  <Link
+                    to="https://github.com/konneqt/quantum-dev-portal"
+                    className={styles.secondaryButton}
+                  >
                     <IconOctocat className={styles.icon} />
                     GitHub
                   </Link>
@@ -110,10 +126,10 @@ function Home() {
           </div>
         </div>
 
-        <HomepageFeatures/>
+        <HomepageFeatures />
       </main>
     </Layout>
-  )
+  );
 }
 
-export default Home
+export default Home;
